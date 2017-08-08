@@ -15,6 +15,7 @@ import (
 	mdagmock "github.com/ipfs/go-ipfs/merkledag/test"
 	ft "github.com/ipfs/go-ipfs/unixfs"
 
+	mh "gx/ipfs/QmVGtdTZdTFaLsaj2RwdVG8jcjNNcp1DE914DKZ2kHmXHw/go-multihash"
 	u "gx/ipfs/QmWbjfz3u6HkAdPh34dgPchGbQjob6LXLhAeCGii2TX69n/go-ipfs-util"
 	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
 	node "gx/ipfs/Qmb3Hm9QDFmfYuET4pu7Kyg8JV78jFa1nvZx5vnCZsK4ck/go-ipld-format"
@@ -41,6 +42,13 @@ type NodeOpts struct {
 var UseProtoBufLeaves = NodeOpts{Prefix: mdag.V0CidPrefix()}
 var UseRawLeaves = NodeOpts{Prefix: mdag.V0CidPrefix(), ForceRawLeaves: true, RawLeavesUsed: true}
 var UseCidV1 = NodeOpts{Prefix: mdag.V1CidPrefix(), RawLeavesUsed: true}
+var UseBlake2b256 NodeOpts
+
+func init() {
+	UseBlake2b256 = UseCidV1
+	UseBlake2b256.Prefix.MhType = mh.Names["blake2b-256"]
+	UseBlake2b256.Prefix.MhLength = -1
+}
 
 func GetNode(t testing.TB, dserv mdag.DAGService, data []byte, opts NodeOpts) node.Node {
 	in := bytes.NewReader(data)
