@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "dagbuilder.go",
+        "helpers.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//commands/files:go_default_library",
+        "//importer/chunk:go_default_library",
+        "//merkledag:go_default_library",
+        "//thirdparty/posinfo:go_default_library",
+        "//unixfs:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_ipld_format//:go_default_library",
+    ],
+)

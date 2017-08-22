@@ -1,0 +1,31 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "//Godeps/_workspace/src/github.com/mitchellh/go-homedir:go_default_library",
+        "//commands:go_default_library",
+        "//core:go_default_library",
+        "//core/corehttp:go_default_library",
+        "//core/coreunix:go_default_library",
+        "//repo/config:go_default_library",
+        "//repo/fsrepo:go_default_library",
+        "@com_github_jbenet_goprocess//:go_default_library",
+        "@in_gopkg_fsnotify_v1//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "ipfswatch",
+    library = ":go_default_library",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["ipfswatch_test.go"],
+    library = ":go_default_library",
+    deps = ["//thirdparty/assert:go_default_library"],
+)

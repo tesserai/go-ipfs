@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["remove.go"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//blocks/blockstore:go_default_library",
+        "//pin:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+    ],
+)

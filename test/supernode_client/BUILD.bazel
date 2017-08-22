@@ -1,0 +1,32 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    visibility = ["//visibility:private"],
+    deps = [
+        "//Godeps/_workspace/src/github.com/jbenet/go-random:go_default_library",
+        "//commands:go_default_library",
+        "//core:go_default_library",
+        "//core/corehttp:go_default_library",
+        "//core/corerouting:go_default_library",
+        "//core/coreunix:go_default_library",
+        "//repo:go_default_library",
+        "//repo/config:go_default_library",
+        "//repo/fsrepo:go_default_library",
+        "//thirdparty/datastore2:go_default_library",
+        "//thirdparty/ipfsaddr:go_default_library",
+        "//thirdparty/unit:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//sync:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peerstore//:go_default_library",
+        "@com_github_multiformats_go_multiaddr//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "supernode_client",
+    library = ":go_default_library",
+    visibility = ["//visibility:public"],
+)

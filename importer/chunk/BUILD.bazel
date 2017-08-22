@@ -1,0 +1,28 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "parse.go",
+        "rabin.go",
+        "splitting.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//Godeps/_workspace/src/github.com/whyrusleeping/chunker:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = [
+        "rabin_test.go",
+        "splitting_test.go",
+    ],
+    library = ":go_default_library",
+    deps = [
+        "//blocks:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+    ],
+)

@@ -1,0 +1,23 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "datastore.go",
+        "gen.go",
+        "identity.go",
+        "latency_config.go",
+        "rand.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//thirdparty/datastore2:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//sync:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@com_github_libp2p_go_libp2p_crypto//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+        "@com_github_multiformats_go_multiaddr//:go_default_library",
+    ],
+)

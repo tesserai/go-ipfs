@@ -1,0 +1,57 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "common.go",
+        "ipns_unix.go",
+        "link_unix.go",
+        "writerat.go",
+    ] + select({
+        "@io_bazel_rules_go//go/platform:darwin_amd64": [
+            "mount_unix.go",
+        ],
+        "@io_bazel_rules_go//go/platform:linux_amd64": [
+            "mount_unix.go",
+        ],
+        "//conditions:default": [],
+    }),
+    visibility = ["//visibility:public"],
+    deps = [
+        "//core:go_default_library",
+        "//merkledag:go_default_library",
+        "//mfs:go_default_library",
+        "//namesys:go_default_library",
+        "//path:go_default_library",
+        "//unixfs:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_libp2p_go_libp2p_crypto//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+        "@org_bazil_fuse//:go_default_library",
+        "@org_bazil_fuse//fs:go_default_library",
+    ] + select({
+        "@io_bazel_rules_go//go/platform:darwin_amd64": [
+            "//fuse/mount:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:linux_amd64": [
+            "//fuse/mount:go_default_library",
+        ],
+        "//conditions:default": [],
+    }),
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["ipns_test.go"],
+    library = ":go_default_library",
+    deps = [
+        "//Godeps/_workspace/src/github.com/jbenet/go-detect-race:go_default_library",
+        "//core:go_default_library",
+        "//namesys:go_default_library",
+        "//routing/offline:go_default_library",
+        "//thirdparty/testutil/ci:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@org_bazil_fuse//fs/fstestutil:go_default_library",
+    ],
+)

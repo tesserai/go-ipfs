@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "ls.go",
+        "unixfs.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//commands:go_default_library",
+        "//core:go_default_library",
+        "//merkledag:go_default_library",
+        "//path:go_default_library",
+        "//unixfs:go_default_library",
+        "//unixfs/io:go_default_library",
+        "//unixfs/pb:go_default_library",
+    ],
+)

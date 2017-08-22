@@ -1,0 +1,62 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "base.go",
+        "dns.go",
+        "interface.go",
+        "namesys.go",
+        "proquint.go",
+        "publisher.go",
+        "routing.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//merkledag:go_default_library",
+        "//namesys/pb:go_default_library",
+        "//path:go_default_library",
+        "//pin:go_default_library",
+        "//thirdparty/ds-help:go_default_library",
+        "//unixfs:go_default_library",
+        "@com_github_bren2010_proquint//:go_default_library",
+        "@com_github_gogo_protobuf//proto:go_default_library",
+        "@com_github_hashicorp_golang_lru//:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_jbenet_go_is_domain//:go_default_library",
+        "@com_github_libp2p_go_libp2p_crypto//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+        "@com_github_libp2p_go_libp2p_record//:go_default_library",
+        "@com_github_libp2p_go_libp2p_record//pb:go_default_library",
+        "@com_github_libp2p_go_libp2p_routing//:go_default_library",
+        "@com_github_multiformats_go_multihash//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = [
+        "dns_test.go",
+        "ipns_select_test.go",
+        "namesys_test.go",
+        "resolve_test.go",
+    ],
+    library = ":go_default_library",
+    deps = [
+        "//namesys/pb:go_default_library",
+        "//path:go_default_library",
+        "//routing/mock:go_default_library",
+        "//routing/offline:go_default_library",
+        "//thirdparty/testutil:go_default_library",
+        "//unixfs:go_default_library",
+        "@com_github_gogo_protobuf//proto:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//sync:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@com_github_libp2p_go_libp2p_crypto//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+    ],
+)

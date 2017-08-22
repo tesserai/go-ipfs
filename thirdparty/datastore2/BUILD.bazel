@@ -1,0 +1,16 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "datastore_closer.go",
+        "delayed.go",
+        "threadsafe.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//thirdparty/delay:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//query:go_default_library",
+    ],
+)

@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["writer.go"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//merkledag:go_default_library",
+        "//unixfs:go_default_library",
+        "//unixfs/io:go_default_library",
+        "//unixfs/pb:go_default_library",
+        "@com_github_gogo_protobuf//proto:go_default_library",
+        "@com_github_ipfs_go_ipld_format//:go_default_library",
+    ],
+)

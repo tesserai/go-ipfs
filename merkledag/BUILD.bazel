@@ -1,0 +1,46 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "coding.go",
+        "merkledag.go",
+        "node.go",
+        "raw.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//blocks:go_default_library",
+        "//blockservice:go_default_library",
+        "//exchange/offline:go_default_library",
+        "//merkledag/pb:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@com_github_ipfs_go_ipld_cbor//:go_default_library",
+        "@com_github_ipfs_go_ipld_format//:go_default_library",
+        "@com_github_multiformats_go_multihash//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_xtest",
+    srcs = [
+        "merkledag_test.go",
+        "node_test.go",
+    ],
+    deps = [
+        ":go_default_library",
+        "//blocks:go_default_library",
+        "//blockservice:go_default_library",
+        "//blockservice/test:go_default_library",
+        "//exchange/offline:go_default_library",
+        "//importer:go_default_library",
+        "//importer/chunk:go_default_library",
+        "//merkledag/pb:go_default_library",
+        "//merkledag/test:go_default_library",
+        "//unixfs/io:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@com_github_ipfs_go_ipld_format//:go_default_library",
+    ],
+)

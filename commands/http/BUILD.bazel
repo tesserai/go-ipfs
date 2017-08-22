@@ -1,0 +1,35 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "client.go",
+        "handler.go",
+        "multifilereader.go",
+        "parse.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//commands:go_default_library",
+        "//commands/files:go_default_library",
+        "//path:go_default_library",
+        "//repo/config:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_rs_cors//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = [
+        "handler_test.go",
+        "multifilereader_test.go",
+    ],
+    library = ":go_default_library",
+    deps = [
+        "//commands:go_default_library",
+        "//commands/files:go_default_library",
+        "//core/commands:go_default_library",
+        "//core/mock:go_default_library",
+    ],
+)

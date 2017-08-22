@@ -1,0 +1,17 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["core.go"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//core:go_default_library",
+        "//repo:go_default_library",
+        "//routing/supernode:go_default_library",
+        "//routing/supernode/proxy:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_libp2p_go_libp2p_host//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peerstore//:go_default_library",
+        "@com_github_libp2p_go_libp2p_routing//:go_default_library",
+    ],
+)
