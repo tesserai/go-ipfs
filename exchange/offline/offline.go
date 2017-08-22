@@ -9,7 +9,7 @@ import (
 	"github.com/ipfs/go-ipfs/blocks/blockstore"
 	exchange "github.com/ipfs/go-ipfs/exchange"
 
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	cid "github.com/ipfs/go-cid"
 )
 
 func Exchange(bs blockstore.Blockstore) exchange.Interface {

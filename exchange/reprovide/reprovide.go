@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
+	backoff "github.com/cenkalti/backoff"
 	blocks "github.com/ipfs/go-ipfs/blocks/blockstore"
-	routing "gx/ipfs/QmNdaQ8itUU9jEZUwTsG4gHMaPmRfi6FEe89QjQAFbep3M/go-libp2p-routing"
-	backoff "gx/ipfs/QmPJUtEJsm5YLUWhF6imvyCH8KZXRJa9Wup7FDMwTy5Ufz/backoff"
-	logging "gx/ipfs/QmSpJByNKFX1sCsHBEp3R73FL4NF6FnQTEGyNAXHm2GS52/go-log"
+	logging "github.com/ipfs/go-log"
+	routing "github.com/libp2p/go-libp2p-routing"
 )
 
 var log = logging.Logger("reprovider")

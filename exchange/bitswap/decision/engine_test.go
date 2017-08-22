@@ -9,13 +9,13 @@ import (
 	"testing"
 
 	context "context"
+	ds "github.com/ipfs/go-datastore"
+	dssync "github.com/ipfs/go-datastore/sync"
 	blocks "github.com/ipfs/go-ipfs/blocks"
 	blockstore "github.com/ipfs/go-ipfs/blocks/blockstore"
 	message "github.com/ipfs/go-ipfs/exchange/bitswap/message"
 	testutil "github.com/ipfs/go-ipfs/thirdparty/testutil"
-	ds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	dssync "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/sync"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	peer "github.com/libp2p/go-libp2p-peer"
 )
 
 type peerAndEngine struct {

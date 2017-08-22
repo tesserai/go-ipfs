@@ -13,11 +13,11 @@ import (
 	dshelp "github.com/ipfs/go-ipfs/thirdparty/ds-help"
 	posinfo "github.com/ipfs/go-ipfs/thirdparty/posinfo"
 
-	ds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	dsns "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/namespace"
-	dsq "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/query"
-	proto "gx/ipfs/QmT6n4mspWYEya864BhCUJEgyxiRfmiSY9ruQwTUNpRKaM/protobuf/proto"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	proto "github.com/golang/protobuf/proto"
+	cid "github.com/ipfs/go-cid"
+	ds "github.com/ipfs/go-datastore"
+	dsns "github.com/ipfs/go-datastore/namespace"
+	dsq "github.com/ipfs/go-datastore/query"
 )
 
 // FilestorePrefix identifies the key prefix for FileManager blocks.

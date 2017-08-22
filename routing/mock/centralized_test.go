@@ -8,9 +8,9 @@ import (
 	delay "github.com/ipfs/go-ipfs/thirdparty/delay"
 	"github.com/ipfs/go-ipfs/thirdparty/testutil"
 
-	u "gx/ipfs/QmWbjfz3u6HkAdPh34dgPchGbQjob6LXLhAeCGii2TX69n/go-ipfs-util"
-	pstore "gx/ipfs/QmXZSd1qR5BxZkPyuwfT5jpqQFScZccoZvDneXsKzCNHWX/go-libp2p-peerstore"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	cid "github.com/ipfs/go-cid"
+	u "github.com/ipfs/go-ipfs-util"
+	pstore "github.com/libp2p/go-libp2p-peerstore"
 )
 
 func TestKeyNotFound(t *testing.T) {

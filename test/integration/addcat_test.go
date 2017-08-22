@@ -18,9 +18,9 @@ import (
 	mock "github.com/ipfs/go-ipfs/core/mock"
 	testutil "github.com/ipfs/go-ipfs/thirdparty/testutil"
 	"github.com/ipfs/go-ipfs/thirdparty/unit"
-	mocknet "gx/ipfs/QmQA5mdxru8Bh6dpC9PJfSkumqnmHgJX7knxSgBo5Lpime/go-libp2p/p2p/net/mock"
-	logging "gx/ipfs/QmSpJByNKFX1sCsHBEp3R73FL4NF6FnQTEGyNAXHm2GS52/go-log"
-	pstore "gx/ipfs/QmXZSd1qR5BxZkPyuwfT5jpqQFScZccoZvDneXsKzCNHWX/go-libp2p-peerstore"
+	logging "github.com/ipfs/go-log"
+	pstore "github.com/libp2p/go-libp2p-peerstore"
+	mocknet "github.com/libp2p/go-libp2p/p2p/net/mock"
 )
 
 var log = logging.Logger("epictest")

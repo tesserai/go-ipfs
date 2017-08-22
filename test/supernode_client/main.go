@@ -12,6 +12,8 @@ import (
 	gopath "path"
 	"time"
 
+	"github.com/ipfs/go-datastore"
+	syncds "github.com/ipfs/go-datastore/sync"
 	random "github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/jbenet/go-random"
 	commands "github.com/ipfs/go-ipfs/commands"
 	core "github.com/ipfs/go-ipfs/core"
@@ -24,13 +26,11 @@ import (
 	ds2 "github.com/ipfs/go-ipfs/thirdparty/datastore2"
 	"github.com/ipfs/go-ipfs/thirdparty/ipfsaddr"
 	unit "github.com/ipfs/go-ipfs/thirdparty/unit"
-	"gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	syncds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/sync"
 
 	context "context"
-	logging "gx/ipfs/QmSpJByNKFX1sCsHBEp3R73FL4NF6FnQTEGyNAXHm2GS52/go-log"
-	pstore "gx/ipfs/QmXZSd1qR5BxZkPyuwfT5jpqQFScZccoZvDneXsKzCNHWX/go-libp2p-peerstore"
-	ma "gx/ipfs/QmcyqRMCAXVtYPS4DiBrA7sezL9rRGfW8Ctx7cywL4TXJj/go-multiaddr"
+	logging "github.com/ipfs/go-log"
+	pstore "github.com/libp2p/go-libp2p-peerstore"
+	ma "github.com/multiformats/go-multiaddr"
 )
 
 var elog = logging.Logger("gc-client")

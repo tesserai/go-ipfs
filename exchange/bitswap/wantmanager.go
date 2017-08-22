@@ -10,9 +10,9 @@ import (
 	bsnet "github.com/ipfs/go-ipfs/exchange/bitswap/network"
 	wantlist "github.com/ipfs/go-ipfs/exchange/bitswap/wantlist"
 
-	metrics "gx/ipfs/QmRg1gKTHzc3CZXSKzem8aR4E3TubFhbgXwfVuWnSK5CC5/go-metrics-interface"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	cid "github.com/ipfs/go-cid"
+	metrics "github.com/ipfs/go-metrics-interface"
+	peer "github.com/libp2p/go-libp2p-peer"
 )
 
 type WantManager struct {

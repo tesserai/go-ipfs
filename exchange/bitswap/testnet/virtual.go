@@ -4,14 +4,14 @@ import (
 	"context"
 	"errors"
 
+	cid "github.com/ipfs/go-cid"
 	bsmsg "github.com/ipfs/go-ipfs/exchange/bitswap/message"
 	bsnet "github.com/ipfs/go-ipfs/exchange/bitswap/network"
 	mockrouting "github.com/ipfs/go-ipfs/routing/mock"
 	delay "github.com/ipfs/go-ipfs/thirdparty/delay"
 	testutil "github.com/ipfs/go-ipfs/thirdparty/testutil"
-	routing "gx/ipfs/QmNdaQ8itUU9jEZUwTsG4gHMaPmRfi6FEe89QjQAFbep3M/go-libp2p-routing"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	peer "github.com/libp2p/go-libp2p-peer"
+	routing "github.com/libp2p/go-libp2p-routing"
 )
 
 func VirtualNetwork(rs mockrouting.Server, d delay.D) Network {

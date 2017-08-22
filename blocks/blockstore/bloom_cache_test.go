@@ -9,9 +9,9 @@ import (
 	"github.com/ipfs/go-ipfs/blocks"
 
 	context "context"
-	ds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	dsq "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/query"
-	syncds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/sync"
+	ds "github.com/ipfs/go-datastore"
+	dsq "github.com/ipfs/go-datastore/query"
+	syncds "github.com/ipfs/go-datastore/sync"
 )
 
 func testBloomCached(ctx context.Context, bs Blockstore) (*bloomcache, error) {

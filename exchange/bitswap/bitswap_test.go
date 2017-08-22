@@ -19,8 +19,8 @@ import (
 
 	detectrace "github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/jbenet/go-detect-race"
 
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
-	p2ptestutil "gx/ipfs/Qma2j8dYePrvN5DoNgwh1uAuu3FFtEtrUQFmr737ws8nCp/go-libp2p-netutil"
+	cid "github.com/ipfs/go-cid"
+	p2ptestutil "github.com/libp2p/go-libp2p-netutil"
 )
 
 // FIXME the tests are really sensitive to the network delay. fix them to work

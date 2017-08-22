@@ -8,7 +8,7 @@ import (
 	ipfspath "github.com/ipfs/go-ipfs/path"
 	uio "github.com/ipfs/go-ipfs/unixfs/io"
 
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	cid "github.com/ipfs/go-cid"
 )
 
 type CoreAPI struct {

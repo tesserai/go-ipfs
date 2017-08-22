@@ -19,8 +19,8 @@ import (
 
 	racedet "github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/jbenet/go-detect-race"
 
-	u "gx/ipfs/QmWbjfz3u6HkAdPh34dgPchGbQjob6LXLhAeCGii2TX69n/go-ipfs-util"
-	fstest "gx/ipfs/QmaFNtBAXX4nVMQWbUqNysXyhevUj1k4B1y5uS45LC7Vw9/fuse/fs/fstestutil"
+	fstest "bazil.org/fuse/fs/fstestutil"
+	u "github.com/ipfs/go-ipfs-util"
 )
 
 func maybeSkipFuseTests(t *testing.T) {

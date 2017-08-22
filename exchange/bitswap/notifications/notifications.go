@@ -5,8 +5,8 @@ import (
 
 	blocks "github.com/ipfs/go-ipfs/blocks"
 
+	cid "github.com/ipfs/go-cid"
 	pubsub "github.com/ipfs/go-ipfs/Godeps/_workspace/src/github.com/briantigerchow/pubsub"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
 )
 
 const bufferSize = 16

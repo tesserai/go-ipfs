@@ -22,7 +22,7 @@ import (
 	pi "github.com/ipfs/go-ipfs/thirdparty/posinfo"
 	"github.com/ipfs/go-ipfs/thirdparty/testutil"
 
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	cid "github.com/ipfs/go-cid"
 )
 
 func TestAddRecursive(t *testing.T) {

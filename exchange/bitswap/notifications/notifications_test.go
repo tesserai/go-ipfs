@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
+	cid "github.com/ipfs/go-cid"
 	blocks "github.com/ipfs/go-ipfs/blocks"
 	blocksutil "github.com/ipfs/go-ipfs/blocks/blocksutil"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
 )
 
 func TestDuplicates(t *testing.T) {

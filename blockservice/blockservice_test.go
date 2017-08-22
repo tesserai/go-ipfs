@@ -8,8 +8,8 @@ import (
 	butil "github.com/ipfs/go-ipfs/blocks/blocksutil"
 	offline "github.com/ipfs/go-ipfs/exchange/offline"
 
-	ds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	dssync "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/sync"
+	ds "github.com/ipfs/go-datastore"
+	dssync "github.com/ipfs/go-datastore/sync"
 )
 
 func TestWriteThroughWorks(t *testing.T) {

@@ -8,10 +8,10 @@ import (
 	pb "github.com/ipfs/go-ipfs/exchange/bitswap/message/pb"
 	wantlist "github.com/ipfs/go-ipfs/exchange/bitswap/wantlist"
 
-	inet "gx/ipfs/QmRscs8KxrSmSv4iuevHv8JfuUzHBMoqiaHzxfDRiksd6e/go-libp2p-net"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
-	ggio "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/io"
-	proto "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
+	ggio "github.com/gogo/protobuf/io"
+	proto "github.com/gogo/protobuf/proto"
+	cid "github.com/ipfs/go-cid"
+	inet "github.com/libp2p/go-libp2p-net"
 )
 
 // TODO move message.go into the bitswap package

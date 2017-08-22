@@ -10,10 +10,10 @@ import (
 	delay "github.com/ipfs/go-ipfs/thirdparty/delay"
 	testutil "github.com/ipfs/go-ipfs/thirdparty/testutil"
 
-	ds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	ds_sync "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore/sync"
-	p2ptestutil "gx/ipfs/Qma2j8dYePrvN5DoNgwh1uAuu3FFtEtrUQFmr737ws8nCp/go-libp2p-netutil"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	ds "github.com/ipfs/go-datastore"
+	ds_sync "github.com/ipfs/go-datastore/sync"
+	p2ptestutil "github.com/libp2p/go-libp2p-netutil"
+	peer "github.com/libp2p/go-libp2p-peer"
 )
 
 // WARNING: this uses RandTestBogusIdentity DO NOT USE for NON TESTS!

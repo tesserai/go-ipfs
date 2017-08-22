@@ -3,11 +3,11 @@ package ipfsaddr
 import (
 	"errors"
 
-	ma "gx/ipfs/QmcyqRMCAXVtYPS4DiBrA7sezL9rRGfW8Ctx7cywL4TXJj/go-multiaddr"
+	ma "github.com/multiformats/go-multiaddr"
 
 	path "github.com/ipfs/go-ipfs/path"
-	logging "gx/ipfs/QmSpJByNKFX1sCsHBEp3R73FL4NF6FnQTEGyNAXHm2GS52/go-log"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	logging "github.com/ipfs/go-log"
+	peer "github.com/libp2p/go-libp2p-peer"
 )
 
 var log = logging.Logger("ipfsaddr")

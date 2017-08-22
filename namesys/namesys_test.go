@@ -10,8 +10,8 @@ import (
 	offroute "github.com/ipfs/go-ipfs/routing/offline"
 	"github.com/ipfs/go-ipfs/unixfs"
 
-	ci "gx/ipfs/QmP1DfoUjiWH2ZBo1PBH6FupdBucbDepx3HpWmEY6JMUpY/go-libp2p-crypto"
-	ds "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
+	ds "github.com/ipfs/go-datastore"
+	ci "github.com/libp2p/go-libp2p-crypto"
 )
 
 type mockResolver struct {

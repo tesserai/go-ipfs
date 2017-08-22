@@ -11,7 +11,7 @@ import (
 	mockrouting "github.com/ipfs/go-ipfs/routing/mock"
 	delay "github.com/ipfs/go-ipfs/thirdparty/delay"
 	testutil "github.com/ipfs/go-ipfs/thirdparty/testutil"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	peer "github.com/libp2p/go-libp2p-peer"
 )
 
 func TestSendMessageAsyncButWaitForResponse(t *testing.T) {

@@ -19,13 +19,13 @@ import (
 	flags "github.com/ipfs/go-ipfs/flags"
 	"github.com/ipfs/go-ipfs/thirdparty/delay"
 
-	metrics "gx/ipfs/QmRg1gKTHzc3CZXSKzem8aR4E3TubFhbgXwfVuWnSK5CC5/go-metrics-interface"
-	process "gx/ipfs/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess"
-	procctx "gx/ipfs/QmSF8fPo3jgVBAy8fpdjjYqgG87dkJgUprRBHRd2tmfgpP/goprocess/context"
-	logging "gx/ipfs/QmSpJByNKFX1sCsHBEp3R73FL4NF6FnQTEGyNAXHm2GS52/go-log"
-	loggables "gx/ipfs/QmVesPmqbPp7xRGyY96tnBwzDtVV1nqv4SCVxo5zCqKyH8/go-libp2p-loggables"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	cid "github.com/ipfs/go-cid"
+	logging "github.com/ipfs/go-log"
+	metrics "github.com/ipfs/go-metrics-interface"
+	process "github.com/jbenet/goprocess"
+	procctx "github.com/jbenet/goprocess/context"
+	loggables "github.com/libp2p/go-libp2p-loggables"
+	peer "github.com/libp2p/go-libp2p-peer"
 )
 
 var log = logging.Logger("bitswap")

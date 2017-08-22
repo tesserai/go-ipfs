@@ -5,7 +5,7 @@ import (
 	"path"
 	"strings"
 
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	cid "github.com/ipfs/go-cid"
 )
 
 // ErrBadPath is returned when a given path is incorrectly formatted

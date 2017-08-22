@@ -9,8 +9,8 @@ import (
 	dagmock "github.com/ipfs/go-ipfs/merkledag/test"
 	path "github.com/ipfs/go-ipfs/path"
 
-	util "gx/ipfs/QmWbjfz3u6HkAdPh34dgPchGbQjob6LXLhAeCGii2TX69n/go-ipfs-util"
-	node "gx/ipfs/Qmb3Hm9QDFmfYuET4pu7Kyg8JV78jFa1nvZx5vnCZsK4ck/go-ipld-format"
+	util "github.com/ipfs/go-ipfs-util"
+	node "github.com/ipfs/go-ipld-format"
 )
 
 func randNode() *merkledag.ProtoNode {

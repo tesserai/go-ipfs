@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	ma "gx/ipfs/QmcyqRMCAXVtYPS4DiBrA7sezL9rRGfW8Ctx7cywL4TXJj/go-multiaddr"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	peer "github.com/libp2p/go-libp2p-peer"
+	ma "github.com/multiformats/go-multiaddr"
 )
 
 // ListenerInfo holds information on a p2p listener.

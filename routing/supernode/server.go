@@ -8,12 +8,12 @@ import (
 	proxy "github.com/ipfs/go-ipfs/routing/supernode/proxy"
 	dshelp "github.com/ipfs/go-ipfs/thirdparty/ds-help"
 
-	datastore "gx/ipfs/QmRWDav6mzWseLWeYfVd5fvUKiVe9xNH29YfMF438fG364/go-datastore"
-	dhtpb "gx/ipfs/QmRmroYSdievxnjiuy99C8BzShNstdEWcEF3LQHF7fUbez/go-libp2p-kad-dht/pb"
-	pb "gx/ipfs/QmWYCqr6UDqqD1bfRybaAPtbAqcN3TSJpveaBXMwbQ3ePZ/go-libp2p-record/pb"
-	pstore "gx/ipfs/QmXZSd1qR5BxZkPyuwfT5jpqQFScZccoZvDneXsKzCNHWX/go-libp2p-peerstore"
-	proto "gx/ipfs/QmZ4Qi3GaRbjcx28Sme5eMH7RQjGkt8wHxt2a65oLaeFEV/gogo-protobuf/proto"
-	peer "gx/ipfs/QmdS9KpbDyPrieswibZhkod1oXqRwZJrUPzxCofAMWpFGq/go-libp2p-peer"
+	proto "github.com/gogo/protobuf/proto"
+	datastore "github.com/ipfs/go-datastore"
+	dhtpb "github.com/libp2p/go-libp2p-kad-dht/pb"
+	peer "github.com/libp2p/go-libp2p-peer"
+	pstore "github.com/libp2p/go-libp2p-peerstore"
+	pb "github.com/libp2p/go-libp2p-record/pb"
 )
 
 // Server handles routing queries using a database backend

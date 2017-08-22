@@ -15,8 +15,8 @@ import (
 	uio "github.com/ipfs/go-ipfs/unixfs/io"
 
 	context "context"
-	u "gx/ipfs/QmWbjfz3u6HkAdPh34dgPchGbQjob6LXLhAeCGii2TX69n/go-ipfs-util"
-	cid "gx/ipfs/QmYhQaCYEcaPPjxJX7YcPcVKkQfRy6sJ7B3XmGFk82XYdQ/go-cid"
+	cid "github.com/ipfs/go-cid"
+	u "github.com/ipfs/go-ipfs-util"
 )
 
 var PinCmd = &cmds.Command{
