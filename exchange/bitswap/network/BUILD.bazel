@@ -1,0 +1,23 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "interface.go",
+        "ipfs_impl.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//exchange/bitswap/message:go_default_library",
+        "@com_github_gogo_protobuf//io:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_libp2p_go_libp2p_host//:go_default_library",
+        "@com_github_libp2p_go_libp2p_net//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peerstore//:go_default_library",
+        "@com_github_libp2p_go_libp2p_protocol//:go_default_library",
+        "@com_github_libp2p_go_libp2p_routing//:go_default_library",
+        "@com_github_multiformats_go_multiaddr//:go_default_library",
+    ],
+)

@@ -1,0 +1,30 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_test")
+
+go_test(
+    name = "go_default_test",
+    srcs = [
+        "addcat_test.go",
+        "bench_cat_test.go",
+        "bench_test.go",
+        "bitswap_wo_routing_test.go",
+        "grandcentral_test.go",
+        "three_legged_cat_test.go",
+    ],
+    deps = [
+        "//Godeps/_workspace/src/github.com/jbenet/go-random:go_default_library",
+        "//blocks:go_default_library",
+        "//core:go_default_library",
+        "//core/corerouting:go_default_library",
+        "//core/coreunix:go_default_library",
+        "//core/mock:go_default_library",
+        "//thirdparty/datastore2:go_default_library",
+        "//thirdparty/testutil:go_default_library",
+        "//thirdparty/unit:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//sync:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_libp2p_go_libp2p//p2p/net/mock:go_default_library",
+        "@com_github_libp2p_go_libp2p_peerstore//:go_default_library",
+    ],
+)

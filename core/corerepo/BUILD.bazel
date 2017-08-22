@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "gc.go",
+        "pinning.go",
+        "stat.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//core:go_default_library",
+        "//mfs:go_default_library",
+        "//path:go_default_library",
+        "//pin/gc:go_default_library",
+        "//repo:go_default_library",
+        "//repo/fsrepo:go_default_library",
+        "//unixfs/io:go_default_library",
+        "@com_github_dustin_go_humanize//:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_ipld_format//:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+    ],
+)

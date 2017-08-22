@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "mock.go",
+        "onlyone.go",
+        "repo.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//filestore:go_default_library",
+        "//keystore:go_default_library",
+        "//repo/config:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_multiformats_go_multiaddr//:go_default_library",
+    ],
+)

@@ -1,0 +1,61 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "daemon.go",
+        "init.go",
+        "ipfs.go",
+        "main.go",
+        "ulimit.go",
+    ] + select({
+        "@io_bazel_rules_go//go/platform:darwin_amd64": [
+            "ulimit_unix.go",
+        ],
+        "@io_bazel_rules_go//go/platform:linux_amd64": [
+            "ulimit_unix.go",
+        ],
+        "//conditions:default": [],
+    }),
+    visibility = ["//visibility:private"],
+    deps = [
+        "//assets:go_default_library",
+        "//commands:go_default_library",
+        "//commands/cli:go_default_library",
+        "//commands/http:go_default_library",
+        "//core:go_default_library",
+        "//core/commands:go_default_library",
+        "//core/corehttp:go_default_library",
+        "//core/corerepo:go_default_library",
+        "//core/corerouting:go_default_library",
+        "//fuse/node:go_default_library",
+        "//namesys:go_default_library",
+        "//repo:go_default_library",
+        "//repo/config:go_default_library",
+        "//repo/fsrepo:go_default_library",
+        "//repo/fsrepo/migrations:go_default_library",
+        "@com_github_Kubuxu_go_os_helper//:go_default_library",
+        "@com_github_gxed_client_golang//prometheus:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_ipfs_go_metrics_prometheus//:go_default_library",
+        "@com_github_libp2p_go_libp2p_interface_conn//:go_default_library",
+        "@com_github_libp2p_go_libp2p_loggables//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peerstore//:go_default_library",
+        "@com_github_multiformats_go_multiaddr//:go_default_library",
+        "@com_github_multiformats_go_multiaddr_net//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "ipfs",
+    library = ":go_default_library",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["main_test.go"],
+    library = ":go_default_library",
+    deps = ["//commands:go_default_library"],
+)

@@ -1,0 +1,28 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["offline.go"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//blocks:go_default_library",
+        "//blocks/blockstore:go_default_library",
+        "//exchange:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["offline_test.go"],
+    library = ":go_default_library",
+    deps = [
+        "//blocks:go_default_library",
+        "//blocks/blockstore:go_default_library",
+        "//blocks/blocksutil:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//sync:go_default_library",
+        "@com_github_ipfs_go_ipfs_util//:go_default_library",
+    ],
+)

@@ -1,0 +1,37 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "filestore.go",
+        "fsrefstore.go",
+        "util.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//blocks:go_default_library",
+        "//blocks/blockstore:go_default_library",
+        "//filestore/pb:go_default_library",
+        "//thirdparty/ds-help:go_default_library",
+        "//thirdparty/posinfo:go_default_library",
+        "@com_github_golang_protobuf//proto:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+        "@com_github_ipfs_go_datastore//namespace:go_default_library",
+        "@com_github_ipfs_go_datastore//query:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["filestore_test.go"],
+    library = ":go_default_library",
+    deps = [
+        "//blocks/blockstore:go_default_library",
+        "//merkledag:go_default_library",
+        "//thirdparty/posinfo:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_datastore//:go_default_library",
+    ],
+)

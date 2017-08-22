@@ -1,0 +1,36 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "coreapi.go",
+        "unixfs.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//core:go_default_library",
+        "//core/coreapi/interface:go_default_library",
+        "//core/coreunix:go_default_library",
+        "//path:go_default_library",
+        "//unixfs/io:go_default_library",
+        "@com_github_ipfs_go_cid//:go_default_library",
+        "@com_github_ipfs_go_ipld_format//:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_xtest",
+    srcs = ["unixfs_test.go"],
+    deps = [
+        ":go_default_library",
+        "//core:go_default_library",
+        "//core/coreapi/interface:go_default_library",
+        "//core/coreunix:go_default_library",
+        "//merkledag:go_default_library",
+        "//repo:go_default_library",
+        "//repo/config:go_default_library",
+        "//thirdparty/testutil:go_default_library",
+        "//unixfs:go_default_library",
+        "@com_github_ipfs_go_ipld_cbor//:go_default_library",
+    ],
+)

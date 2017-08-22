@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "loopback.go",
+        "standard.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_gogo_protobuf//io:go_default_library",
+        "@com_github_ipfs_go_log//:go_default_library",
+        "@com_github_libp2p_go_libp2p_host//:go_default_library",
+        "@com_github_libp2p_go_libp2p_kad_dht//pb:go_default_library",
+        "@com_github_libp2p_go_libp2p_kbucket//:go_default_library",
+        "@com_github_libp2p_go_libp2p_loggables//:go_default_library",
+        "@com_github_libp2p_go_libp2p_net//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peerstore//:go_default_library",
+    ],
+)

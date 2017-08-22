@@ -1,0 +1,31 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "addresses.go",
+        "api.go",
+        "bootstrap_peers.go",
+        "config.go",
+        "datastore.go",
+        "discovery.go",
+        "experiments.go",
+        "gateway.go",
+        "identity.go",
+        "init.go",
+        "ipns.go",
+        "mounts.go",
+        "reprovider.go",
+        "supernode.go",
+        "swarm.go",
+        "tour.go",
+        "version.go",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//Godeps/_workspace/src/github.com/mitchellh/go-homedir:go_default_library",
+        "//thirdparty/ipfsaddr:go_default_library",
+        "@com_github_libp2p_go_libp2p_crypto//:go_default_library",
+        "@com_github_libp2p_go_libp2p_peer//:go_default_library",
+    ],
+)
