@@ -7,7 +7,7 @@ type Profile struct {
 	Unapply Transformer
 }
 
-// Profiles is a map holding configuration transformers
+// Profiles is a map holding configuration transformers. Docs are in docs/config.md
 var Profiles = map[string]*Profile{
 	"server": {
 		Apply: func(c *Config) error {
