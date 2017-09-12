@@ -126,6 +126,14 @@ func (kr *Root) Flush() error {
 	return nil
 }
 
+func (kr *Root) Sync() error {
+  if kr.repub != nil {
+    kr.repub.WaitPub()
+  }
+
+  return nil
+}
+
 // closeChild implements the childCloser interface, and signals to the publisher that
 // there are changes ready to be published
 func (kr *Root) closeChild(name string, nd node.Node, sync bool) error {
